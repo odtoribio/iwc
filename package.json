@@ -13,7 +13,9 @@
   "author": "Oscar David Toribio",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "*",
-    "express3-handlebars": "*"
+    "express3-handlebars": "*",
+    "mongoose": "^4.7.2"
   }
 }

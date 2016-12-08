@@ -5,8 +5,10 @@
     <title></title>
   </head>
   <body>
-    <p>
-      {{message}}
-    </p>
+  	<form id="confessForm" action= "/postConfession" method="POST">
+  		<textarea id= "confess" name="confession"  form = "confessForm" style="resize: none; width: 500px; height: 300px" placeholder="confess something..."></textarea>
+  		<input type="submit">
+  	</form>
+  	{{body}}
   </body>
 </html>
