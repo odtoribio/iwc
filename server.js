@@ -7,17 +7,17 @@ var bodyParser = require('body-parser')
 
 var app = express();
 var server = http.createServer(app);
-
 server.listen(process.env.PORT || 3000);
+
 app.engine('hbs', expressHbs({extname:'hbs', defaultLayout: 'main.hbs'}));
 app.set('view engine', 'hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use('/public',express.static(__dirname + "/static"));
 
 var uri = 'mongodb://leo:leo@ds115798.mlab.com:15798/testing';
-var db = mongoose.connect(uri);
-
+mongoose.connect(uri);
 var Schema = mongoose.Schema;
 
 var confessSchema = new Schema({
@@ -29,9 +29,7 @@ var confessSchema = new Schema({
 
 
 var Confession = mongoose.model('Confession',confessSchema);
-var confess = new Confession({content:" i hate code in C#", forgive: 10, condemn: 5});
-
-console.log('confess: ' + confess);
+// var confess = new Confession({content:" i hate code in C#", forgive: 10, condemn: 5});
 
 // fs.readdirSync(__dirname + '/model').forEach(function(file){
 // 	if (file.indexOf('.js')) require(__dirname + '/model/' + file);

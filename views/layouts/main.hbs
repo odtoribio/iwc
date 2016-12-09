@@ -3,12 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/styles.css">
+    <script src="/public/js/bootstrap.min.js"></script>
   </head>
   <body>
-  	<form id="confessForm" action= "/postConfession" method="POST">
-  		<textarea id= "confess" name="confession"  form = "confessForm" style="resize: none; width: 500px; height: 300px" placeholder="confess something..."></textarea>
-  		<input type="submit">
-  	</form>
+    <header>
+      <div class="jumbotron ">
+        <div class="container">
+          <h1>iWc</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+		<form id="confessForm" action= "/postConfession" method="POST">
+		  	<div class="form-group">
+			  	<textarea id= "confess" class="form-control" name="confession"  form = "confessForm" style="resize: none; height: 100px;" placeholder="confess something..."></textarea>
+		  	</div>
+		  	<input type="submit" class="btn btn-primary" value="Confesar">
+		</form>
+  	</div>
   	{{body}}
+    <script src="/public/js/jquery-3.1.1.min.js"></script>
   </body>
 </html>
